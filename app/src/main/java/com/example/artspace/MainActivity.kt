@@ -44,19 +44,20 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ArtSpaceTheme {
-               Surface {  }
+               Surface {
+                   ArtSpaceArea()
+               }
             }
         }
     }
 }
 
 @Composable
-fun ArtSpaceArea(modifier: Modifier) {
+fun ArtSpaceArea() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-//            .background(Color(139, 92, 246))
     ) {
         Column (
             modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 96.dp),
@@ -134,6 +135,6 @@ fun ArtSpaceArea(modifier: Modifier) {
 @Composable
 fun ArtSpacePreview() {
     ArtSpaceTheme {
-        ArtSpaceArea(Modifier)
+        ArtSpaceArea()
     }
 }
